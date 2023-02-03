@@ -11,7 +11,7 @@ const CountriesList = ({ countries }) => (
                         <span style={{ fontSize: '0.7em' }}>{country.alpha2Code} </span> 
                         <img src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
                             style={{ height: '1em'}} alt="country's flag"></img>
-                        <span>  {country.name.common}</span> 
+                        <span>  {country.name}</span> 
                         
                     </Link>                    
                 </ListGroup.Item>  

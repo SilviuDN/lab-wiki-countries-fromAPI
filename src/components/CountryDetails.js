@@ -8,26 +8,24 @@ const CountryDetails = ({match, countries}) => {
     const country = countries.find( el => el.alpha3Code === alpha3Code )
     const alpha2Code = country.alpha2Code.toLowerCase()
     const linkToFlagPic = `https://flagpedia.net/data/flags/icon/72x54/${alpha2Code}.png`
-    const borders = [...country.borders]
-
-    // console.log( match )
-    // console.log( country )
+    // const borders = [...country.borders]
 
     return (
         <>
+        <h1>Unfortunately, the access to the API's neighbours list has been restricted for free accounts.</h1>
         <Card style={{ width: '70%', marginLeft: '15%', marginTop: '3em' }}>
             <Card.Img variant="top" src={linkToFlagPic} />
             <Card.Body>
                 <Card.Title>
                     <img src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
                         style={{ height: '1em'}} alt="country's flag"></img>
-                        <span>  {country.name.common}  </span> 
+                        <span>  {country.name}  </span> 
                 </Card.Title>
                 <Card.Text>
-                {country.altSpellings[1]}
+                {country.altSpellings.length > 0 ? country.altSpellings[1] : ''}
                 </Card.Text>
             </Card.Body>
-            <ListGroup className="list-group-flush">
+            {/* <ListGroup className="list-group-flush">
                 {borders.length > 0 &&
                     <>
                     {
@@ -40,7 +38,7 @@ const CountryDetails = ({match, countries}) => {
                     
                     </>
                 }
-            </ListGroup>
+            </ListGroup> */}
             <Card.Body>
                 <Card.Link href="#">Capital: {country.capital}</Card.Link>
                 <Card.Link href="#">Region: {country.region}</Card.Link>
